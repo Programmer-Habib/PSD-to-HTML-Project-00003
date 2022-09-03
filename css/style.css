@@ -1,0 +1,423 @@
+/* =============
+GLOBAL SETUP
+============= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+:root{
+    --color: #76c38f;
+    --ahovercolor: #4d0000;
+    --txtcolor: #979797;
+    --whitecolor: #ffffff;
+    --headerbackground: #290000;
+    --headerimgcolor: #6b6b6b;
+    --mainbackground: #660000;
+    --footerbackground: #303030;
+    
+    
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    text-rendering: optimizeLegibility;
+}
+/* .clear{
+    content: "";
+    clear: both;
+    display: table;
+} */
+/* =============
+MULTI SETUP
+============= */
+.btn{
+    padding: 1.2rem 1.6rem;
+    display: inline-block;
+    background-color: var(--color);
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--whitecolor);
+}
+h1{
+    font-size: 4.6rem;
+    font-weight: normal;
+    color: var(--whitecolor);
+}
+h2,h3{
+    font-size: 3.2rem;
+    font-weight: normal;
+    color: var(--whitecolor);
+}
+h4{
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: var(--whitecolor);
+}
+a{
+    font-size: 1.3rem;
+}
+p{
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+}
+.wrapper{
+    max-width: 96rem;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* =============
+HEADER SETUP
+============= */
+.header{
+    width: 100%;
+    background: var(--headerbackground);
+    height: 100vh;
+    border-top: .5rem solid var(--color);
+    display: flex;
+    overflow: hidden;
+}
+.head-area{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 4.2rem 0;
+}
+/* logo and navber */
+.logo{
+    width: 25%;
+}
+.nav{
+    width: 75%;
+}
+.nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.nav ul li{
+    list-style-type: none;
+}
+.nav ul li a{
+    padding: 1.2rem 1.6rem;
+    display: inline-block;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--whitecolor);
+    transition: .5s;
+}
+.nav ul li a.active{
+    background-color: var(--color);
+}
+.nav ul li a:hover:not(.active){
+    background-color: var(--color);
+}
+.nav ul li a.active:hover{
+    background-color: #290000;
+    outline: .1rem solid var(--whitecolor);
+}
+/* mobile menu */
+.mobile-menu{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.4rem;
+    color: var(--whitecolor);
+    cursor: pointer;
+    float: right;
+    display: none;
+}
+.sidenav{
+    width: 0%;
+    height: 100%;
+    background: var(--color);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    overflow-x: hidden;
+    padding-top: 6rem;
+    transition: .5s;
+}
+.sidenav a{
+    color: var(--whitecolor);
+    text-decoration: none;
+    display: block;
+    font-size: 2rem;
+    padding: 3rem 0rem 3rem 3rem;
+    transition: .5s;
+    border-bottom: 1px solid #404040;
+}
+.sidenav a:hover{
+    background-color: #1d1f1ee3;
+}
+.closebtn{
+    position: absolute;
+    top: 0;
+    right: 2.5rem;
+    font-size: 4rem !important;
+    border-bottom: none !important;
+    padding: 0 !important;
+}
+.closebtn:hover{
+    display: inline-block !important;
+    background-color: transparent !important;
+}
+/* hero area */
+.slider{
+    width: 100%;
+    height: 88vh;
+}
+.hero-area{
+    width: 100%;
+    height: 88vh;
+    margin-top: 10rem;
+}
+.hero-text{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.hero-text p{
+    margin-top: 3.2rem;
+    color: var(--txtcolor);
+}
+.hero-text a{
+    margin-top: 3.2rem;
+}
+.hero-text a:hover{
+    background-color: #290000;
+    outline: .1rem solid var(--whitecolor);
+}
+.hero-img{
+    width: 85%;
+}
+.hero-img img{
+    width: 100%;
+    border: 2.5rem solid var(--headerimgcolor);
+    border-radius: 50%;
+}
+
+/* =============
+SERVICE SETUP
+============= */
+main{
+    width: 100%;
+    background: var(--mainbackground);
+    overflow: hidden;
+}
+.services-wrapper{
+    margin: 6rem 0;
+    overflow: hidden;
+}
+.service{
+    background-color: var(--whitecolor);
+    padding: 2rem;
+    text-align: center;
+}
+.service img{
+    /* width: 100%; */
+}
+.service h3{
+    color: #000000;
+    margin-top: 2rem;
+}
+.service p{
+    color: var(--txtcolor);
+    margin-top: 2.4rem;
+}
+.service:hover{
+    background-color: var(--color);
+    color: var(--whitecolor);
+}
+/* =============
+WORKS SETUP
+============= */
+.works-border{
+    border-top: .3rem solid var(--headerimgcolor);
+    position: relative;
+}
+.works-head h2{
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--headerimgcolor);
+    padding: 1.2rem 1.6rem;
+    border-radius: .5rem;
+}
+.works-wrapper{
+    display: block;
+    margin: 6rem 0;
+    overflow: hidden;
+}
+.img1{
+    background: url(img/image01.jpg);
+}
+.img2{
+    background: url(img/image02.jpg);
+}
+.img3{
+    background: url(img/image03.jpg);
+}
+.img4{
+    background: url(img/image04.jpg);
+}
+.img5{
+    background: url(img/image05.jpg);
+}
+.img6{
+    background: url(img/image06.jpg);
+}
+.img{
+    width: 100%;
+    height: 19rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(100%);
+    border: .3rem solid var(--whitecolor);
+    position: relative;
+    cursor: pointer;
+}
+.img:hover{
+    filter: grayscale(0);
+    border: .3rem solid var(--color);
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+}
+.overlay h3{
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(21,21,21, .8);
+    width: 100%;
+    text-align: center;
+    padding: .8rem  0;
+}
+.overlay:hover h3{
+    visibility: hidden;
+}
+
+/* =============
+FOOTER SETUP
+============= */
+.footer{
+    background: var(--footerbackground);
+    width: 100%;
+    overflow: hidden;
+}
+.footer-wrapper{
+    overflow: hidden;
+    margin: 6rem 0;
+    line-height: 1.6rem;
+}
+.foot-info p{
+    color: var(--txtcolor);
+    font-size: 1.3rem;
+}
+.foot-info a{
+    color: var(--color);
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: .3s;
+}
+.foot-info a:hover{
+    color: var(--ahovercolor);
+}
+/* blog area */
+.blog h5{
+    font-size: 1.3rem;
+    color: var(--color);
+    margin-top: 3.5rem;
+}
+.blog small{
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--txtcolor);
+}
+small.small-color{
+    color: #666666;
+}
+.blog small span{
+    color: var(--color);
+}
+.blog p{
+    margin-top: 1.2rem;
+}
+.blog a{
+    display: inline-block;
+    margin-top: 1.2rem;
+    text-decoration: none;
+}
+/* link area */
+.link{
+    margin-top: 3.5rem;
+}
+.link p{
+    border-bottom: 1px solid #404040;
+    line-height: 3rem;
+}
+/* tweets area */
+.tweets p{
+    margin-top: 3.5rem;
+}
+/* form area */
+.form{
+    margin-top: 3.5rem;
+}
+.form input,textarea{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: #222222;
+    color: var(--txtcolor);
+    outline: none;
+    border: none;
+    resize: none;
+}
+.form input::placeholder, textarea::placeholder{
+    color: #989898;
+}
+.form button{
+    display: inline-block;
+    border: none;
+    text-transform: uppercase;
+    color: #303030;
+    cursor: pointer;
+    margin-bottom: .1rem;
+    transition: .5s;
+}
+.form button:hover{
+    background-color: var(--footerbackground);
+    outline: .1rem solid var(--txtcolor);
+    color: var(--txtcolor);
+}
+.copyright{
+    width: 100%;
+    padding: 2.5rem;
+    background: #2b2b2b;
+}
+.copyright-text p{
+    color: var(--txtcolor);
+}
+
+/* =============
+ALHAMDULILLAH
+THANK YOU
+TEH END
+============= */
